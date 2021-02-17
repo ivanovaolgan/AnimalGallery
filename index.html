@@ -102,25 +102,20 @@
             }
         }
     // HERE IS WHERE YOU COME IN...
-        // fill in the following gaps:
-        // 1)
-        // load the html content of the animal-detail-template into a variable called sourcs
+       // load the html content of the animal-detail-template into a variable called sourcs
 
         var source  = $("#animal-detail-template").html();
 
-        // 2)
         // compile the contents of that variable using Handlebars and store it into
 
         var template = Handlebars.compile(source);
 
-        // 3)
         // call the template function, passing it the 'an_animal' variable to render the animal data with
         // the template and store the results in a variable.
 
         var html = template(an_animal)
 
-        // 4)
-        // finally, replace the contents of the div with id #content_right
+        // replace the contents of the div with id #content_right
         // with the results of your template render
 
         $('#content_right').html(html);
