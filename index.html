@@ -1,5 +1,3 @@
-<!-- This is a first example of using a template -->
-
 <head>
 
 <!-- include our libraries and css files -->
@@ -18,35 +16,34 @@
 </head>
 
 <body>
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"> Animal list</a> 
+                    <button type="button" class="navbar-toggle collapsed" 
+                    data-toggle="collapse" data-target="#content_left" 
+                    aria-expanded="false" >
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                       
+                </div>
+            </div>    
+        </nav>
+    </div>
 
-    <div id="container">
-	    
-		<div class="row">
-		<nav class="navbar navbar-default">
-        <div class="container-fluid">
-          
-		  <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Animal list</a>
-          </div>
-		  
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-				<div id="content_left">
+    <div id="container">	    
+		<div class="row">				
+				<div class="col-md-2">	
+						<div class="collapse navbar-collapse" id="content_left" >
 						<!-- animal list is rendered here -->
-				</div>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>		
-		
+						</div>
+				</div> <!--/.menu section -->
 					
-				<div class="col-xs-12 col-md-10"> <!--/ picture section-->
+				<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10"> <!--/ picture section-->
 					<div id="content_right">
 						<!-- animal detail is rendered here -->
 					</div> <!--/.content-right -->
@@ -68,10 +65,10 @@
 
     <script id="animal-detail-template" type="text/x-handlebars-template">
         <h2>{{name}}</h2>
-		<div class="col-xs-12 col-md-5">
+		<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5">
 		<img class="img-fluid img-thumbnail" src="{{image1}}"/>
 		</div>
-		<div class="col-xs-12 col-md-5">
+		<div class="col-xs-12 col-sm-10 col-md-5 col-lg-5">
 		<img class="img-fluid img-thumbnail" src="{{image2}}"/>
 		</div>
     </script>
@@ -101,8 +98,8 @@
                 break;
             }
         }
-    // HERE IS WHERE YOU COME IN...
-       // load the html content of the animal-detail-template into a variable called sourcs
+
+        // load the html content of the animal-detail-template into a variable called source
 
         var source  = $("#animal-detail-template").html();
 
@@ -115,7 +112,7 @@
 
         var html = template(an_animal)
 
-        // replace the contents of the div with id #content_right
+        // finally, replace the contents of the div with id #content_right
         // with the results of your template render
 
         $('#content_right').html(html);
